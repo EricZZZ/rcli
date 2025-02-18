@@ -1,1 +1,3 @@
-Rust rcli 项目
+# RCLI
+
+RCLI is a rust command line tools.
