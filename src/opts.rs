@@ -13,6 +13,8 @@ pub struct Opts {
 pub enum SubCommand {
     #[command(name = "csv", about = "Show CSV, or convert CSV to other formats")]
     Csv(CsvOpts),
+    #[command(name = "genpass", about = "Generate random password")]
+    GenPass(GenPassOpts),
 }
 
 #[derive(Debug, Parser)]
@@ -31,6 +33,24 @@ pub struct CsvOpts {
 
     #[clap(long, default_value_t = false)]
     pub header: bool,
+}
+
+#[derive(Debug, Parser)]
+pub struct GenPassOpts {
+    #[clap(short, long, default_value_t = 16)]
+    pub length: u8,
+
+    #[clap(long, default_value_t = true)]
+    pub uppercase: bool,
+
+    #[clap(long, default_value_t = true)]
+    pub lowercase: bool,
+
+    #[clap(long, default_value_t = true)]
+    pub number: bool,
+
+    #[clap(long, default_value_t = true)]
+    pub symbol: bool,
 }
 
 #[derive(Debug, Clone, Copy)]
