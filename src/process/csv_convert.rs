@@ -4,7 +4,7 @@ use anyhow::Result;
 use csv::Reader;
 use serde::{Deserialize, Serialize};
 
-use crate::opts::OutputFormat;
+use crate::cli::OutputFormat;
 
 #[derive(Debug, Serialize, Deserialize)]
 #[serde(rename_all = "PascalCase")]
