@@ -2,11 +2,11 @@ use std::{fmt, str::FromStr};
 
 use clap::Parser;
 
-use super::verify_input_file;
+use super::verify_file;
 
 #[derive(Debug, Parser)]
 pub struct CsvOpts {
-    #[clap(short, long, value_parser = verify_input_file)] // 校验输入文件
+    #[clap(short, long, value_parser = verify_file)] // 校验输入文件
     pub input: String,
 
     #[clap(short, long)] // "output.json".into()
